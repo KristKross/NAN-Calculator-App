@@ -1,0 +1,528 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menuLayout"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="225dp"
+            android:fontFamily="@font/rimouski"
+            android:text="Tamis Time"
+            android:textColor="@color/white"
+            android:textSize="56sp" />
+
+        <Button
+            android:id="@+id/startButton"
+            android:onClick="start"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttonbg"
+            android:text="Start"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="120dp" />
+
+        <Button
+            android:id="@+id/tutorialButton"
+            android:onClick="showPopup"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/buttonbg"
+            android:textColor="@color/white"
+            android:text="Tutorial"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/firstChoice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/ingredientText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="240dp"
+            android:text="Choose an Ingredient:"
+            android:fontFamily="@font/rimouski"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <ImageButton
+                android:id="@+id/rice"
+                android:onClick="firstChoiceRice"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="70dp"
+                android:src="@drawable/ricebtn"
+                android:background="@drawable/buttonbg"/>
+
+            <ImageButton
+                android:id="@+id/coconut"
+                android:onClick="firstChoiceCoconut"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="225dp"
+                android:src="@drawable/coconutbtn"
+                android:background="@drawable/buttonbg"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/back1"
+            android:onClick="back1"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/buttonbg"
+            android:textColor="@color/white"
+            android:text="Back"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/confirm1"
+            android:onClick="confirm1"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/buttonbg"
+            android:textColor="@color/white"
+            android:text="Confirm"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/secondChoice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/ingredientText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="240dp"
+            android:text="Choose an Ingredient:"
+            android:textColor="@color/white"
+            android:fontFamily="@font/rimouski"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <ImageButton
+                android:id="@+id/yam"
+                android:onClick="secondChoiceYam"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="70dp"
+                android:src="@drawable/yambtn"
+                android:background="@drawable/buttonbg" />
+
+            <ImageButton
+                android:id="@+id/bean"
+                android:onClick="secondChoiceBean"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="225dp"
+                android:src="@drawable/beansbtn"
+                android:background="@drawable/buttonbg" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/back2"
+            android:onClick="back2"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/buttonbg"
+            android:textColor="@color/white"
+            android:text="Back"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/confirm2"
+            android:onClick="confirm2"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/buttonbg"
+            android:textColor="@color/white"
+            android:text="Confirm"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/thirdChoice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/ingredientText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="240dp"
+            android:text="Choose an Ingredient:"
+            android:textColor="@color/white"
+            android:fontFamily="@font/rimouski"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <ImageButton
+                android:id="@+id/jackfruit"
+                android:onClick="thirdChoiceJackfruit"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="70dp"
+                android:src="@drawable/jackfruitbtn"
+                android:background="@drawable/buttonbg" />
+
+            <ImageButton
+                android:id="@+id/banana"
+                android:onClick="thirdChoiceBanana"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="225dp"
+                android:src="@drawable/bananabtn"
+                android:background="@drawable/buttonbg" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/back3"
+            android:onClick="back3"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/buttonbg"
+            android:textColor="@color/white"
+            android:text="Back"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/confirm3"
+            android:onClick="confirm3"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/buttonbg"
+            android:textColor="@color/white"
+            android:text="Confirm"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/resultPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/rimouski"
+            android:background="#373d4d"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="5dp"
+            android:text="You have made..."
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.063" />
+
+        <TextView
+            android:id="@+id/resultDessert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:fontFamily="@font/rimouski"
+            android:padding="10dp"
+            android:background="#373d4d"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.101" />
+
+        <Button
+            android:id="@+id/infoButton"
+            android:onClick="infoButton"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="420dp"
+            android:background="@drawable/buttonbg"
+            android:textColor="@color/white"
+            android:text="Information"/>
+
+        <Button
+            android:id="@+id/mainMenu"
+            android:onClick="mainMenuPage"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/buttonbg"
+            android:textColor="@color/white"
+            android:text="Main Menu"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/bowlImage"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:src="@drawable/emptybowl"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32" />
+
+    <ImageView
+        android:id="@+id/riceImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/rice"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <ImageView
+        android:id="@+id/coconutImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/coconut"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <ImageView
+        android:id="@+id/yamImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/yam"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <ImageView
+        android:id="@+id/beanImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/beans"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <ImageView
+        android:id="@+id/jackfruitImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/jackfruit"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <ImageView
+        android:id="@+id/bananaImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/banana"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+
+    <ImageView
+        android:id="@+id/bibingka"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bibingka"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/biko"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/biko"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/biloBilo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38"
+        app:srcCompat="@drawable/ginataang_bilo_bilo"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/ginataangMonggo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38"
+        app:srcCompat="@drawable/ginataang_monggo"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/saging"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.49"
+        app:srcCompat="@drawable/minatamis_na_saging"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/pinaypay"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.49"
+        app:srcCompat="@drawable/pinaypay"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/puto"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.49"
+        app:srcCompat="@drawable/puto_bumbong"
+        android:visibility="gone"  />
+
+    <ImageView
+        android:id="@+id/ubeHalaya"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.49"
+        app:srcCompat="@drawable/ube_halaya"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
